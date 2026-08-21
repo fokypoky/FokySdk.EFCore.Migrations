@@ -9,7 +9,7 @@
         <PackageId>FokySdk.EFCore.Migrations</PackageId>
         <Version>1.0.0</Version>
         <Authors>fokypoky</Authors>
-        <Description>-</Description>
+        <Description>Entity Framework Core PostgreSQL migration utils</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fokypoky/FokySdk.EFCore.Migrations</PackageProjectUrl>
         <RepositoryUrl>https://github.com/fokypoky/FokySdk.EFCore.Migrations</RepositoryUrl>
