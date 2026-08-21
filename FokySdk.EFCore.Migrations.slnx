@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FokySdk.EFCore.Migrations/FokySdk.EFCore.Migrations.csproj" />
+  <Project Path="UnitTests/UnitTests.csproj" />
+</Solution>
