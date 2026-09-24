@@ -8,10 +8,24 @@ namespace FokySdk.EFCore.Migrations
     {
         public T CreateDbContext(string[] args)
         {
+            if (args.Length == 0)
+            {
+                return CreateEmptyContext();
+            }
+
             var migrationOptions = ArgumentParser.ParseArguments(args);
             
             var optionsBuilder = new DbContextOptionsBuilder<T>();
             optionsBuilder.UseNpgsql(migrationOptions.ToConnectionString());
+
+            var instance = (T)Activator.CreateInstance(typeof(T), optionsBuilder.Options) ?? throw new Exception($"Can't create instance of {typeof(T).Name}");
+            return instance;
+        }
+
+        private T CreateEmptyContext()
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<T>();
+            optionsBuilder.UseNpgsql();
 
             var instance = (T)Activator.CreateInstance(typeof(T), optionsBuilder.Options) ?? throw new Exception($"Can't create instance of {typeof(T).Name}");
             return instance;
